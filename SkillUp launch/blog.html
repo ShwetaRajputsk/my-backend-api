@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillUp Launch - Blogs</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    /* Add any additional styling here if needed */
+    /* body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    } */
+    
+    .blog-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .card-banner {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .img-holder {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .img-cover {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s;
+    }
+
+    .img-cover:hover {
+      transform: scale(1.05);
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .card-text {
+      color: #666;
+      margin: 10px 0;
+    }
+
+    .card-link {
+      text-decoration: none;
+      color: #ED7F1C; /* Your primary color */
+      font-weight: bold;
+    }
+
+    .card-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- Navbar Section -->
+  <header class="header">
+    <div class="header-bottom" data-header>
+      <div class="container">
+        <a href="#" class="logo">
+          <img src="assets/images/Skillup.png" alt="SkillUp Launch Logo" style="height: 100px;">
+        </a>
+      
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+            <li class="navbar-item"><a href="index.html" class="navbar-link skewBg" data-nav-link>Home</a></li>
+            <li class="navbar-item"><a href="#about" class="navbar-link skewBg" data-nav-link>About</a></li>
+            <li class="navbar-item"><a href="#services" class="navbar-link skewBg" data-nav-link>Services</a></li>
+            <li class="navbar-item"><a href="#portfolio" class="navbar-link skewBg" data-nav-link>Portfolio</a></li>
+            <li class="navbar-item"><a href="blog.html" class="navbar-link skewBg" data-nav-link>Blogs</a></li>
+            <li class="navbar-item"><a href="#contact" class="navbar-link skewBg" data-nav-link>Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+            <ion-icon name="menu-outline" class="menu"></ion-icon>
+            <ion-icon name="close-outline" class="close"></ion-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Blog Section -->
+  <section class="section blog" id="blog" aria-label="blog">
+    <div class="container">
+      <h2 class="h2 section-title">Latest News & <span class="span">Articles</span></h2>
+      <p class="section-text">Stay updated with our latest posts and articles.</p>
+      <ul class="blog-list"></ul>
+    </div>
+  </section>
+<!-- contact section start -->
+<section class="contact" id="contact">
+  <div class="max-width">
+    <h2 class="h2 section-title">
+      <span class="span">Contact Us</span>
+     </h2>
+    <div class="contact-content">
+      <div class="column left">
+        <div class="text">Get in Touch</div>
+        <p>Interested in collaborating or discussing your project? Browse my portfolio and let's connect to explore how I can assist you.</p>
+        <div class="icons">
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <div class="info">
+              <div class="head">Name</div>
+              <div class="sub-title">Shweta Rajput</div>
+            </div>
+          </div>
+          <div class="row">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="info">
+              <div class="head">Address</div>
+              <div class="sub-title">Sonipat, Haryana</div>
+            </div>
+          </div>
+          <div class="row">
+            <i class="fas fa-envelope"></i>
+            <div class="info">
+              <div class="head">Email</div>
+              <div class="sub-title">insanemindsk@gmail.com</div>
+            </div>
+          </div>
+          <div class="row">
+            <i class="fas fa-phone phone-icon"></i>
+            <div class="info">
+              <div class="head">Phone Number</div>
+              <div class="sub-title">9350075177</div>
+            </div>
+          </div>
+          <div class="row">
+            <i class="fas fa-link"></i>
+            <div class="info">
+              <div class="head">Social Links</div>
+                <div class="social-icons">
+                  <a href="https://instagram.com/insanemind_sk?igshid=NGExMmI2YTkyZg==" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                  <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="https://youtu.be/KaSIPerfFT4" target="_blank" rel="noopener" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column right">
+        <div class="text">Message me</div>
+        <form name="submit-to-google-sheet">
+          <div class="fields">
+            <div class="field name">
+              <input type="text" name="Name" placeholder="Name" required>
+            </div>
+            <div class="field email">
+              <input type="email" name="Email" placeholder="Email" required>
+            </div>
+          </div>
+          <div class="field">
+            <input type="text" name="Subject" placeholder="Subject" required>
+          </div>
+          <div class="field textarea">
+            <textarea name="Message" cols="30" rows="10" placeholder="Message" required></textarea>
+          </div>
+          <div class="button-area">
+            <button type="submit">Send message</button>
+          </div>
+        </form>
+        <span id="msg"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- footer section start -->
+    <footer>
+        <span>Created By <a href="https://instagram.com/insanemind_sk?igshid=NGExMmI2YTkyZg==" target="_blank" rel="noopener">Shweta Rajput</a> | <span class="far fa-copyright"></span> 2024 All rights reserved.</span>
+    </footer>
+  <!-- Fetch Blog Data Script -->
+<script>
+  async function fetchBlogs() {
+    const blogList = document.querySelector('.blog-list');
+    blogList.innerHTML = '<li>Loading...</li>'; // Show loading message
+
+    try {
+      const response = await fetch('http://localhost:3000/api/blogs');
+      if (!response.ok) throw new Error('Network response was not ok'); // Check for response status
+      const blogs = await response.json();
+      blogList.innerHTML = ''; // Clear loading message
+
+      // Check if there are any blogs returned
+      if (blogs.length === 0) {
+        blogList.innerHTML = '<li>No blog posts available.</li>';
+        return;
+      }
+
+      blogs.forEach(blog => {
+        const blogCard = `
+          <li>
+            <div class="blog-card">
+              <figure class="card-banner img-holder" style="--width: 400; --height: 290;">
+                <img src="${blog.imageUrl}" alt="${blog.title}" class="img-cover">
+              </figure>
+              <div class="card-content">
+                <ul class="card-meta-list">
+                  <li class="card-meta-item"><span class="item-text">Admin</span></li>
+                  <li class="card-meta-item"><time class="item-text">${new Date(blog.date).toLocaleDateString()}</time></li>
+                </ul>
+                <h3><a href="#" class="card-title">${blog.title}</a></h3>
+                <p class="card-text">${blog.excerpt}</p>
+                <a href="blog-detail.html?id=${blog._id}" class="card-link"><span class="span">Read More</span></a> <!-- Updated link -->
+              </div>
+            </div>
+          </li>`;
+        blogList.insertAdjacentHTML('beforeend', blogCard);
+      });
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+      blogList.innerHTML = '<li>Error fetching blogs. Please try again later.</li>';
+    }
+  }
+
+  // Fetch blogs when the DOM is fully loaded
+  document.addEventListener('DOMContentLoaded', fetchBlogs);
+</script>
+
+    
+
+</body>
+</html>
