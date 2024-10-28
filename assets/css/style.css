@@ -672,8 +672,8 @@ body {
 padding: -100px 10px !important; /* Reduce the padding from left and right */  
   }  
   .services .serv-content .card {  
- width: 70%;  
- height: 70vw; /* Set the height to be equal to the width */  
+ width: 100%;  
+ height: 100vw; /* Set the height to be equal to the width */  
  margin: 10px 0; /* Reduce the margin from top and bottom */  
  padding: 20px; /* Increase the padding to make the card bigger */  
  overflow: hidden; /* Remove the scrollbar */  
