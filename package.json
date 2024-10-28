@@ -1,12 +1,13 @@
 {
   "name": "SkillUpLaunch",
   "version": "1.0.0",
-  "main": "server.js",  
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js"  
+    "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
-
+    "express": "^4.17.1",
+    "mongoose": "^6.0.0",  // Add mongoose if it's not there
+    "cors": "^2.8.5"       // Add cors if it's not there
   }
 }
