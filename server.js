@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+mongoose.set('strictQuery', true);
 const cors = require('cors'); // Require the cors module
 const blogRoutes = require('./routes/blogs');
 const path = require('path');
@@ -35,9 +36,6 @@ app.get('/api/blogs/:id', async (req, res) => {
     res.status(500).send('Error fetching blog');
   }
 });
-
-// Use the blog routes
-app.use('/api', blogRoutes);
 
 // Connect to MongoDB Atlas
 mongoose.connect('mongodb+srv://shwetakashyap942001:hTCbVcFGgOUNtsr8@cluster1.kuymv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1', {
