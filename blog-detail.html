@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillUp Launch - Blog Details</title>
+  <!-- !-- 
+    - google font link
+  --> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    /* Existing styles remain unchanged */
+    
+    /* Blog Content */
+    .blog-container {
+      padding: 120px 40px 40px;
+      /* padding-top: 150px; */
+      max-width: fit-content;
+      margin: 0 auto;
+      background-color: #fff;
+    }
+
+    .blog-title {
+        padding-top: 50px;
+      font-size: 4.5rem;
+      font-weight: 900;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .blog-content-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    .blog-image-container {
+      flex: 1;
+      max-width: 100%;
+    }
+
+    .blog-image {
+      width: auto;
+      height: auto;
+      border-radius: 8px;
+      margin-left: auto;
+    }
+
+    .blog-content {
+      flex: 2;
+      font-size: 2rem;
+      color: #555;
+      line-height: 1.8;
+      margin-right: auto;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #ED7F1C;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .back-button:hover {
+      background-color: #d46c15;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .blog-container {
+        padding: 80px 20px 20px; /* Adjusted padding for mobile */
+        overflow-y: auto;
+      }
+
+      .blog-title {
+        font-size: 2.5rem; /* Smaller font size for titles on mobile */
+      }
+
+      .blog-content-wrapper {
+        flex-direction: column; /* Stack content vertically on small screens */
+        gap: 20px; /* Reduced gap between elements */
+      }
+
+      .blog-image-container {
+        width: 100%; /* Full width for images on mobile */
+      }
+
+      .blog-image {
+        width: 100%; /* Responsive image width */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 8px; /* Maintain the same border radius */
+      }
+
+      .blog-content {
+        font-size: 1.5rem; /* Smaller font size for content */
+      }
+
+      .back-button {
+        padding: 10px 20px; /* Adjust button padding for mobile */
+        font-size: 1rem; /* Smaller font size for button */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar Section -->
+  <header class="header">
+    <div class="header-bottom" data-header>
+      <div class="container">
+        <a href="#" class="logo">
+          <img src="assets/images/Skillup.png" alt="SkillUp Launch Logo" style="height: 100px;">
+        </a>
+      
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+            <li class="navbar-item"><a href="index.html" class="navbar-link skewBg" data-nav-link>Home</a></li>
+            <li class="navbar-item"><a href="index.html" class="navbar-link skewBg" data-nav-link>About</a></li>
+            <li class="navbar-item"><a href="index.html" class="navbar-link skewBg" data-nav-link>Services</a></li>
+            <li class="navbar-item"><a href="index.html" class="navbar-link skewBg" data-nav-link>Portfolio</a></li>
+            <li class="navbar-item"><a href="index.html" class="navbar-link skewBg" data-nav-link>Blogs</a></li>
+            <li class="navbar-item"><a href="index.html" class="navbar-link skewBg" data-nav-link>Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+            <ion-icon name="menu-outline" class="menu"></ion-icon>
+            <ion-icon name="close-outline" class="close"></ion-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Blog Details Section -->
+  <div class="blog-container">
+    <h1 class="blog-title"></h1>
+    
+    <div class="blog-content-wrapper">
+      <div class="blog-image-container">
+        <img class="blog-image" src="" alt="Blog Image">
+      </div>
+      
+      <div class="blog-content">
+        <p></p>
+      </div>
+    </div>
+    
+    <a href="blog.html" class="back-button">Back to Blogs</a>
+  </div>
+
+  <script>
+    // Function to get the blog ID from the URL
+    function getBlogId() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('id');
+    }
+
+    async function fetchBlogDetails(blogId) {
+        try {
+            const response = await fetch(`http://localhost:3000/api/blogs/${blogId}`);
+            
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Failed to fetch blog details.');
+            }
+
+            const blog = await response.json();
+            
+            // Populate the blog details in the UI
+            document.querySelector('.blog-title').innerText = blog.title || 'Blog Title';
+            document.querySelector('.blog-image').src = blog.imageUrl || 'assets/images/default-blog.jpg';
+            document.querySelector('.blog-content p').innerText = blog.content || 'Content not available.';
+        } catch (error) {
+            console.error("Error fetching blog details:", error);
+            document.querySelector('.blog-container').innerHTML = '<p>Error fetching blog details. Please try again later.</p>';
+        }
+    }
+
+    // Fetch blog details when the page is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        const blogId = getBlogId();
+        if (blogId) {
+            fetchBlogDetails(blogId);
+        } else {
+            document.querySelector('.blog-container').innerHTML = '<p>No blog ID found in the URL.</p>';
+        }
+    });
+  </script>
+
+</body>
+</html>
