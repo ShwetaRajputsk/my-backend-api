@@ -198,7 +198,7 @@
     blogList.innerHTML = '<li>Loading...</li>'; // Show loading message
 
     try {
-      const response = await fetch('http://localhost:3000/api/blogs');
+      const response = await fetch('https://my-backend-api-9.onrender.com');
       if (!response.ok) throw new Error('Network response was not ok'); // Check for response status
       const blogs = await response.json();
       blogList.innerHTML = ''; // Clear loading message
