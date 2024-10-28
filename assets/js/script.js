@@ -1,10 +1,12 @@
 'use strict';
 
 
-
+const API_URL = 'https://my-backend-api-9.onrender.com/api/blogs';
 const navbar = document.querySelector("[data-navbar]");
 const navbarLinks = document.querySelectorAll("[data-nav-link]");
 const navbarToggler = document.querySelector("[data-nav-toggler]");
+
+
 
 navbarToggler.addEventListener("click", function () {
   navbar.classList.toggle("active");
@@ -17,8 +19,6 @@ for (let i = 0; i < navbarLinks.length; i++) {
     navbarToggler.classList.remove("active");
   });
 }
-
-
 
 /**
  * search toggle
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const content = document.getElementById('content').value;
 
     try {
-      const response = await fetch('/api/blogs', {
+      const response = await fetch( API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function fetchBlogs() {
   try {
-    const response = await fetch('/api/blogs');
+    const response = await fetch(API_URL);
     const blogs = await response.json();
     const blogPostsDiv = document.getElementById('blog-posts');
     blogPostsDiv.innerHTML = ''; // Clear previous posts
