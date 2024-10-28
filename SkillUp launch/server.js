@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+mongoose.set('strictQuery', true);
 const cors = require('cors'); // Require the cors module
 const blogRoutes = require('./routes/blogs');
 const path = require('path');
@@ -36,17 +37,13 @@ app.get('/api/blogs/:id', async (req, res) => {
   }
 });
 
-// Use the blog routes
-app.use('/api', blogRoutes);
-
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/skillup_launch', {
+// Connect to MongoDB Atlas
+mongoose.connect('mongodb+srv://shwetakashyap942001:hTCbVcFGgOUNtsr8@cluster1.kuymv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.log('MongoDB connection error:', err));
-
 // Start the server
 const PORT = 3000;
 app.listen(PORT, () => {
